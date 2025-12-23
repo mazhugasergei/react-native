@@ -1,14 +1,6 @@
-import { StatusBar } from "expo-status-bar"
-import { Text, View } from "react-native"
-import "./global.css"
+import { AppRegistry } from "react-native"
+import App from "./src/app"
 
-export default function App() {
-	return (
-		<>
-			<View className="flex-1 items-center justify-center bg-white">
-				<Text className="text-xl font-bold">Hi</Text>
-			</View>
-			<StatusBar style="auto" />
-		</>
-	)
-}
+AppRegistry.registerComponent("App", () => App)
+
+export default App
