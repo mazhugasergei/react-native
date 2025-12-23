@@ -1,16 +1,37 @@
-import "@/global.css"
+import { darkThemeColors, lightThemeColors } from "@/lib/constants"
+import { AppNavigator } from "@/navigation"
+import { DarkTheme, DefaultTheme, NavigationContainer } from "@react-navigation/native"
 import { StatusBar } from "expo-status-bar"
-import { Text, useColorScheme, View } from "react-native"
+import { useColorScheme } from "react-native"
+import "react-native-gesture-handler"
+import { SafeAreaProvider } from "react-native-safe-area-context"
+
+// Custom Material You theme
+const lightTheme = {
+	...DefaultTheme,
+	colors: {
+		...DefaultTheme.colors,
+		...lightThemeColors,
+	},
+}
+
+const darkTheme = {
+	...DarkTheme,
+	colors: {
+		...DarkTheme.colors,
+		...darkThemeColors,
+	},
+}
 
 export function App() {
 	const colorScheme = useColorScheme()
 
 	return (
-		<>
-			<View className="flex-1 items-center justify-center bg-green-400">
-				<Text className="text-7xl font-bold text-white">Hi</Text>
-			</View>
-			<StatusBar style="auto" />
-		</>
+		<SafeAreaProvider>
+			<NavigationContainer theme={colorScheme === "dark" ? darkTheme : lightTheme}>
+				<StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
+				<AppNavigator />
+			</NavigationContainer>
+		</SafeAreaProvider>
 	)
 }
