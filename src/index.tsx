@@ -1,5 +1,5 @@
 import { AppNavigator } from "@/navigation"
-import { useThemeStore } from "@/store/theme"
+import { useThemeStore } from "@/utils/store/theme"
 import { NavigationContainer } from "@react-navigation/native"
 import { StatusBar } from "expo-status-bar"
 import { useEffect } from "react"

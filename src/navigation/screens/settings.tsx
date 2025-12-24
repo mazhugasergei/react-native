@@ -1,4 +1,4 @@
-import { useThemeStore } from "@/store/theme"
+import { useThemeStore } from "@/utils/store/theme"
 import { View } from "react-native"
 import { List, Switch } from "react-native-paper"
 
