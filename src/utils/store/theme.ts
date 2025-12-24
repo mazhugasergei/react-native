@@ -84,7 +84,7 @@ export const darkTheme = {
 
 		secondary: "rgb(180, 180, 180)",
 		onSecondary: "rgb(25, 25, 25)",
-		secondaryContainer: "rgb(50, 50, 50)",
+		secondaryContainer: "rgb(56, 56, 56)",
 		onSecondaryContainer: "rgb(230, 230, 230)",
 
 		tertiary: "rgb(160, 160, 160)",
@@ -118,11 +118,11 @@ export const darkTheme = {
 
 		elevation: {
 			level0: "transparent",
-			level1: "rgb(30, 30, 30)",
-			level2: "rgb(28, 28, 28)",
-			level3: "rgb(26, 26, 26)",
-			level4: "rgb(24, 24, 24)",
-			level5: "rgb(22, 22, 22)",
+			level1: "rgb(36, 36, 36)",
+			level2: "rgb(34, 34, 34)",
+			level3: "rgb(32, 32, 32)",
+			level4: "rgb(30, 30, 30)",
+			level5: "rgb(28, 28, 28)",
 		},
 
 		surfaceDisabled: "rgba(230, 230, 230, 0.12)",
