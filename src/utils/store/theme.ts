@@ -84,7 +84,7 @@ export const darkTheme = {
 
 		secondary: "rgb(180, 180, 180)",
 		onSecondary: "rgb(25, 25, 25)",
-		secondaryContainer: "rgb(48, 48, 48)",
+		secondaryContainer: "rgb(50, 50, 50)",
 		onSecondaryContainer: "rgb(230, 230, 230)",
 
 		tertiary: "rgb(160, 160, 160)",
