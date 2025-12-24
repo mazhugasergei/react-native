@@ -1,12 +1,12 @@
 import { useThemeStore } from "@/utils/store/theme"
-import { View } from "react-native"
 import { List, Switch } from "react-native-paper"
+import { SafeAreaView } from "react-native-safe-area-context"
 
 export function SettingsScreen() {
 	const { theme, setTheme } = useThemeStore()
 
 	return (
-		<View style={{ flex: 1, padding: 16 }}>
+		<SafeAreaView style={{ flex: 1, padding: 16 }}>
 			<List.Section>
 				<List.Item
 					title="Dark Mode"
@@ -17,6 +17,6 @@ export function SettingsScreen() {
 					)}
 				/>
 			</List.Section>
-		</View>
+		</SafeAreaView>
 	)
 }
