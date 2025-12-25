@@ -35,6 +35,7 @@ export function AppNavigator() {
 					const Icon = iconMap[route.key]
 					return Icon ? <Icon color={color} size={24} /> : null
 				}}
+				inactiveColor={palette.colors.secondary}
 				getLabelText={({ route }) => route.title}
 			/>
 		</Provider>
