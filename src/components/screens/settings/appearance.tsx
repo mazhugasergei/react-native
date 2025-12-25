@@ -2,29 +2,26 @@ import { useThemeStore } from "@/utils/store/theme"
 import { Moon } from "lucide-react-native"
 import { StyleSheet, View } from "react-native"
 import { List, Switch } from "react-native-paper"
-import { SafeAreaView } from "react-native-safe-area-context"
 
 export function AppearanceScreen() {
 	const { theme, setTheme } = useThemeStore()
 	const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
-			<List.Section>
-				<List.Subheader>Appearance</List.Subheader>
-				<List.Item
-					title="Dark mode"
-					description="Use dark theme"
-					left={({ color, style }) => <Moon color={color} size={22} style={style} />}
-					right={() => (
-						<View style={styles.switchContainer}>
-							<Switch value={theme === "dark"} onValueChange={toggleTheme} />
-						</View>
-					)}
-					onPress={toggleTheme}
-				/>
-			</List.Section>
-		</SafeAreaView>
+		<List.Section>
+			<List.Subheader>Appearance</List.Subheader>
+			<List.Item
+				title="Dark mode"
+				description="Use dark theme"
+				left={({ color, style }) => <Moon color={color} size={22} style={style} />}
+				right={() => (
+					<View style={styles.switchContainer}>
+						<Switch value={theme === "dark"} onValueChange={toggleTheme} />
+					</View>
+				)}
+				onPress={toggleTheme}
+			/>
+		</List.Section>
 	)
 }
 

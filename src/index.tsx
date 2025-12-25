@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import { useColorScheme } from "react-native"
 import "react-native-gesture-handler"
 import { BottomNavigation, PaperProvider } from "react-native-paper"
-import { SafeAreaProvider } from "react-native-safe-area-context"
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context"
 
 export function App() {
 	const [index, setIndex] = useState(0)
@@ -33,10 +33,12 @@ export function App() {
 					<StatusBar style={theme === "dark" ? "light" : "dark"} />
 
 					{/* screens */}
-					{BottomNavigation.SceneMap(Object.fromEntries(routes.map((route) => [route.key, route.component])))({
-						route: routes[index],
-						jumpTo: (key: string) => setIndex(routes.findIndex((r) => r.key === key)),
-					})}
+					<SafeAreaView style={{ flex: 1 }} edges={["top", "left", "right"]}>
+						{BottomNavigation.SceneMap(Object.fromEntries(routes.map((route) => [route.key, route.component])))({
+							route: routes[index],
+							jumpTo: (key: string) => setIndex(routes.findIndex((r) => r.key === key)),
+						})}
+					</SafeAreaView>
 
 					{/* bottom navigation bar */}
 					<BottomNavigation.Bar
