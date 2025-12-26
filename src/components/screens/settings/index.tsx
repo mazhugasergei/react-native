@@ -14,7 +14,6 @@ export function Settings() {
 				headerStyle: {
 					backgroundColor: palette.colors.background,
 				},
-				headerTintColor: palette.colors.onBackground,
 				headerTitleStyle: {
 					fontWeight: "600",
 					fontSize: 18,
