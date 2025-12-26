@@ -13,13 +13,11 @@
 		"@react-native-material/core": "^1.3.7",
 		"@react-navigation/native": "^7.1.26",
 		"@react-navigation/stack": "^7.6.13",
-		"clsx": "^2.1.1",
 		"color": "^5.0.3",
 		"deepmerge": "^4.3.1",
 		"expo": "^54.0.0",
 		"expo-status-bar": "~3.0.8",
 		"lucide-react-native": "^0.562.0",
-		"nativewind": "latest",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
 		"react-native": "0.81.5",
@@ -31,17 +29,13 @@
 		"react-native-svg": "^15.15.1",
 		"react-native-web": "^0.21.0",
 		"react-native-worklets": "0.5.1",
-		"tailwind-merge": "^3.4.0",
 		"zustand": "^5.0.9"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.20.0",
 		"@expo/ngrok": "^4.1.3",
 		"@types/react": "~19.1.10",
 		"prettier": "^3.7.4",
 		"prettier-plugin-organize-imports": "^4.3.0",
-		"prettier-plugin-tailwindcss": "^0.5.14",
-		"tailwindcss": "^3.4.0",
 		"typescript": "~5.9.2"
 	},
 	"main": "node_modules/expo/AppEntry.js"
