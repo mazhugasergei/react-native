@@ -44,7 +44,7 @@ export function App() {
 						onTabPress={({ route }) => setIndex(routes.findIndex((r) => r.key === route.key))}
 						renderIcon={({ route, focused, color }) => {
 							const Icon = route.icon
-							return <Icon color={focused ? color : palette.colors.onSurface} size={24} />
+							return <Icon color={focused ? color : palette.colors.secondary} size={24} />
 						}}
 						inactiveColor={palette.colors.secondary}
 						getLabelText={({ route }) => route.title}
