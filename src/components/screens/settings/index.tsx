@@ -1,36 +1,29 @@
-import { defaultIconSize } from "@/lib/constants"
-import { useNavigation } from "@react-navigation/native"
-import { Info, PaletteIcon, UserIcon } from "lucide-react-native"
-import { List } from "react-native-paper"
+import { useThemeStore } from "@/utils/store/theme"
+import { createStackNavigator } from "@react-navigation/stack"
+import { Appearance } from "./appearance"
+import { Home } from "./home"
 
-export function SettingsScreen() {
-	const navigation = useNavigation()
+export function Settings() {
+	const Stack = createStackNavigator()
+	const { palette } = useThemeStore()
 
 	return (
-		<>
-			<List.Section>
-				<List.Subheader>General</List.Subheader>
-				<List.Item
-					title="Profile"
-					left={({ color, style }) => <UserIcon color={color} size={defaultIconSize} style={style} />}
-					onPress={() => {}}
-				/>
-				<List.Item
-					title="Appearance"
-					left={({ color, style }) => <PaletteIcon color={color} size={defaultIconSize} style={style} />}
-					onPress={() => {}}
-				/>
-			</List.Section>
-
-			<List.Section>
-				<List.Subheader>About</List.Subheader>
-				<List.Item
-					title="App info"
-					description="Version, etc."
-					left={({ color, style }) => <Info color={color} size={defaultIconSize} style={style} />}
-					onPress={() => {}}
-				/>
-			</List.Section>
-		</>
+		<Stack.Navigator
+			initialRouteName="Home"
+			screenOptions={{
+				headerStyle: {
+					backgroundColor: palette.colors.background,
+				},
+				headerTintColor: palette.colors.onBackground,
+				headerTitleStyle: {
+					fontWeight: "600",
+					fontSize: 18,
+				},
+				headerShadowVisible: false,
+			}}
+		>
+			<Stack.Screen name="Home" component={Home} />
+			<Stack.Screen name="Appearance" component={Appearance} />
+		</Stack.Navigator>
 	)
 }

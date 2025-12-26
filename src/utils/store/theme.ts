@@ -1,7 +1,14 @@
 import {
+	DarkTheme as NavigationDefaultDarkTheme,
+	DefaultTheme as NavigationDefaultLightTheme,
+	type Theme as NavigationTheme,
+} from "@react-navigation/native"
+import merge from "deepmerge"
+import {
+	adaptNavigationTheme,
 	MD3DarkTheme as defaultDarkTheme,
 	MD3LightTheme as defaultLightTheme,
-	MD3Theme as defaultTheme,
+	type MD3Theme as DefaultTheme,
 } from "react-native-paper"
 import { create } from "zustand"
 
@@ -9,11 +16,14 @@ type Theme = "light" | "dark"
 
 interface ThemeStore {
 	theme: Theme
-	palette: defaultTheme
+	palette: DefaultTheme
+	navigationTheme: NavigationTheme
 	setTheme: (theme: Theme) => void
 }
 
-export const lightTheme = {
+// paper theme
+
+export const lightTheme: DefaultTheme = {
 	...defaultLightTheme,
 	colors: {
 		...defaultLightTheme.colors,
@@ -72,7 +82,7 @@ export const lightTheme = {
 	},
 }
 
-export const darkTheme = {
+export const darkTheme: DefaultTheme = {
 	...defaultDarkTheme,
 	colors: {
 		...defaultDarkTheme.colors,
@@ -131,12 +141,26 @@ export const darkTheme = {
 	},
 }
 
+// navigation themes
+
+const { LightTheme: _navigationLightTheme, DarkTheme: _navigationDarkTheme } = adaptNavigationTheme({
+	reactNavigationLight: NavigationDefaultLightTheme,
+	reactNavigationDark: NavigationDefaultDarkTheme,
+})
+
+const navigationLightTheme: NavigationTheme = merge(_navigationLightTheme, lightTheme)
+const navigationDarkTheme: NavigationTheme = merge(_navigationDarkTheme, darkTheme)
+
+// theme store
+
 export const useThemeStore = create<ThemeStore>((set) => ({
 	theme: "light",
 	palette: lightTheme,
+	navigationTheme: navigationLightTheme,
 	setTheme: (theme) =>
 		set({
 			theme,
 			palette: theme === "light" ? lightTheme : darkTheme,
+			navigationTheme: theme === "light" ? navigationLightTheme : navigationDarkTheme,
 		}),
 }))

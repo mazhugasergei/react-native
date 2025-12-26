@@ -2,8 +2,9 @@ import ColorSwatch from "@/components/color-swatch"
 import { useThemeStore } from "@/utils/store/theme"
 import { getColorSections } from "@/utils/theme-utils"
 import { ScrollView, StyleSheet, Text, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 
-export function HomeScreen() {
+export function Home() {
 	const { palette } = useThemeStore()
 	const isDark = palette.dark
 	const backgroundColor = palette.colors.background
@@ -12,18 +13,20 @@ export function HomeScreen() {
 	const colorSections = getColorSections(palette)
 
 	return (
-		<ScrollView style={[styles.container, { backgroundColor }]}>
-			{colorSections.map((section, index) => (
-				<View key={index} style={styles.section}>
-					<Text style={[styles.sectionTitle, { color: textColor }]}>{section.title}</Text>
-					<View style={styles.swatchContainer}>
-						{section.colors.map((item, i) => (
-							<ColorSwatch key={i} name={item.name} color={item.color} isDark={isDark} />
-						))}
+		<SafeAreaView style={{ flex: 1 }} edges={["top", "left", "right"]}>
+			<ScrollView style={[styles.container, { backgroundColor }]}>
+				{colorSections.map((section, index) => (
+					<View key={index} style={styles.section}>
+						<Text style={[styles.sectionTitle, { color: textColor }]}>{section.title}</Text>
+						<View style={styles.swatchContainer}>
+							{section.colors.map((item, i) => (
+								<ColorSwatch key={i} name={item.name} color={item.color} isDark={isDark} />
+							))}
+						</View>
 					</View>
-				</View>
-			))}
-		</ScrollView>
+				))}
+			</ScrollView>
+		</SafeAreaView>
 	)
 }
 

@@ -3,7 +3,7 @@ import { Moon } from "lucide-react-native"
 import { StyleSheet, View } from "react-native"
 import { List, Switch } from "react-native-paper"
 
-export function AppearanceScreen() {
+export function Appearance() {
 	const { theme, setTheme } = useThemeStore()
 	const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark")
 
