@@ -10,7 +10,6 @@ export function InfoScreen() {
 	const currentYear = new Date().getFullYear()
 
 	const openLink = async (url: string) => {
-		// You can implement link opening logic here
 		console.log("Opening:", url)
 	}
 

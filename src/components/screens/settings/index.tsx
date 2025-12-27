@@ -23,9 +23,9 @@ export function Settings() {
 				headerShadowVisible: false,
 			}}
 		>
-			<Stack.Screen name="Home" component={Home} />
+			<Stack.Screen name="Home" component={Home} options={{ title: "Settings" }} />
 			<Stack.Screen name="Appearance" component={Appearance} />
-			<Stack.Screen name="Info" component={InfoScreen} />
+			<Stack.Screen name="Info" component={InfoScreen} options={{ title: "App info" }} />
 			<Stack.Screen name="Help" component={HelpScreen} options={{ title: "Help & Support" }} />
 		</Stack.Navigator>
 	)
