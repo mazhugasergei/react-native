@@ -2,6 +2,7 @@ import { useThemeStore } from "@/utils/store/theme"
 import { createStackNavigator } from "@react-navigation/stack"
 import { Appearance } from "./appearance"
 import { Home } from "./home"
+import { InfoScreen } from "./info"
 
 export function Settings() {
 	const Stack = createStackNavigator()
@@ -23,6 +24,7 @@ export function Settings() {
 		>
 			<Stack.Screen name="Home" component={Home} />
 			<Stack.Screen name="Appearance" component={Appearance} />
+			<Stack.Screen name="Info" component={InfoScreen} />
 		</Stack.Navigator>
 	)
 }

@@ -1,17 +1,10 @@
 import { defaultIconSize } from "@/lib/constants"
+import { SettingsScreenNavigationProp } from "@/lib/types"
 import { useNavigation } from "@react-navigation/native"
-import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 import { Info, PaletteIcon, UserIcon } from "lucide-react-native"
 import { StyleSheet } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { List } from "react-native-paper"
-
-type SettingsStackParamList = {
-	Home: undefined
-	Appearance: undefined
-}
-
-type SettingsScreenNavigationProp = NativeStackNavigationProp<SettingsStackParamList, "Home">
 
 export function Home() {
 	const navigation = useNavigation<SettingsScreenNavigationProp>()
@@ -38,7 +31,7 @@ export function Home() {
 					title="App info"
 					description="Version, etc."
 					left={({ color, style }) => <Info color={color} size={defaultIconSize} style={style} />}
-					onPress={() => {}}
+					onPress={() => navigation.navigate("Info")}
 				/>
 			</List.Section>
 		</ScrollView>
