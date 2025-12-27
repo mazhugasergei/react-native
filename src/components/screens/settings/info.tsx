@@ -1,15 +1,5 @@
 import { defaultIconSize } from "@/lib/constants"
-import {
-	ChevronRightIcon,
-	ClockIcon,
-	CodeIcon,
-	ExternalLinkIcon,
-	GithubIcon,
-	HeartIcon,
-	InfoIcon,
-	ShieldIcon,
-	SmartphoneIcon,
-} from "lucide-react-native"
+import { ClockIcon, CodeIcon, GithubIcon, HeartIcon, InfoIcon, ShieldIcon, SmartphoneIcon } from "lucide-react-native"
 import { StyleSheet, View } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { List, Text, useTheme } from "react-native-paper"
@@ -60,13 +50,13 @@ export function InfoScreen() {
 					title="Privacy Policy"
 					onPress={() => openLink("https://example.com/privacy")}
 					left={({ color, style }) => <ShieldIcon color={color} size={defaultIconSize} style={style} />}
-					right={({ color, style }) => <ChevronRightIcon size={defaultIconSize} color={color} style={style} />}
+					right={(props) => <List.Icon {...props} icon="chevron-right" />}
 				/>
 				<List.Item
 					title="Terms of Service"
 					onPress={() => openLink("https://example.com/terms")}
 					left={({ color, style }) => <List.Icon color={color} icon="file-document" style={style} />}
-					right={({ color, style }) => <ChevronRightIcon size={defaultIconSize} color={color} style={style} />}
+					right={(props) => <List.Icon {...props} icon="chevron-right" />}
 				/>
 			</List.Section>
 
@@ -76,14 +66,14 @@ export function InfoScreen() {
 					title="Source Code"
 					onPress={() => openLink("https://github.com")}
 					left={({ color, style }) => <CodeIcon color={color} size={defaultIconSize} style={style} />}
-					right={({ color, style }) => <ExternalLinkIcon size={defaultIconSize} color={color} style={style} />}
+					right={(props) => <List.Icon {...props} icon="chevron-right" />}
 				/>
 				<List.Item
 					title="Contribute"
 					description="Help improve this app"
 					onPress={() => openLink("https://github.com")}
 					left={({ color, style }) => <GithubIcon color={color} size={defaultIconSize} style={style} />}
-					right={({ color, style }) => <ExternalLinkIcon size={defaultIconSize} color={color} style={style} />}
+					right={(props) => <List.Icon {...props} icon="chevron-right" />}
 				/>
 			</List.Section>
 
