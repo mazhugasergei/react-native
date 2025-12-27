@@ -1,6 +1,7 @@
 import { useThemeStore } from "@/utils/store/theme"
 import { createStackNavigator } from "@react-navigation/stack"
 import { Appearance } from "./appearance"
+import { HelpScreen } from "./help"
 import { Home } from "./home"
 import { InfoScreen } from "./info"
 
@@ -25,6 +26,7 @@ export function Settings() {
 			<Stack.Screen name="Home" component={Home} />
 			<Stack.Screen name="Appearance" component={Appearance} />
 			<Stack.Screen name="Info" component={InfoScreen} />
+			<Stack.Screen name="Help" component={HelpScreen} options={{ title: "Help & Support" }} />
 		</Stack.Navigator>
 	)
 }

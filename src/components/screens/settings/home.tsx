@@ -68,7 +68,7 @@ export function Home() {
 					title="Help & Support"
 					left={({ color, style }) => <InfoIcon color={color} size={defaultIconSize} style={style} />}
 					right={(props) => <List.Icon {...props} icon="chevron-right" />}
-					onPress={() => {}}
+					onPress={() => navigation.navigate("Help")}
 				/>
 			</List.Section>
 		</ScrollView>
